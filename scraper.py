@@ -6,13 +6,11 @@ while True:
 
     soup = BeautifulSoup(cmc.text,"html.parser")
     HASHLIST=soup.findAll("a",attrs={'class':"sc-1r996ns-0 fLwyDF sc-1tbyx6t-1 kCGMTY iklhnl-0 eEewhk d53qjk-0 ctEFcK"})
-#TIMESTAMP=soup.findAll("span",attrs={'class':"sc-1ryi78w-0 cILyoi sc-16b9dsl-1 ZwupP u3ufsr-0 eQTRKC"})
     BTCDOLLIST=soup.findAll("span",attrs={'class':"sc-1ryi78w-0 cILyoi sc-16b9dsl-1 ZwupP u3ufsr-0 eQTRKC"})
-#data = soup.find('script')
-#print(TIMESTAMP[-1])
+
 
 #variabelen declareren
-#initiële lijsten
+#initial lists
     hashlijstje=[]
     Transactielijst=[]
 
@@ -61,19 +59,15 @@ while True:
 
     usdlijst.sort()
 
-    #print("Hoogste waarde: ",usdlijst[-1],"om {} GMT ".format(tijdstip[0]))
+   
     for key, value in HASHDICUSD.items():
         if usdlijst[-1]==HASHDICUSD[key]:
             print("deze hash:",key,"met waarde:",value,"in USD en dit in bitcoin:",HASHDICBTC[key],"en is op {} GMT opgehaald".format(tijdstip[0]))
-
+            #naar logfile afprinten!
+            f = open("transaction.log","a")
+            tekst= "[{}]".format(tijdstip[0])+" De hash: {} is de grootste transactie deze minuut met een waarde van {} en is omgerekend ${}\n".format(key,HASHDICBTC[key],value)
+            f.write(str(tekst))
+            f.close()
     time.sleep(60)
     print("oei, deze test zit er nog in")
 
-#print(HASHDICUSD)
-#print(tijdteller)
-#print(bitteller)
-#print(usdteller)
-#print(HASHLIST)
-#print(BTCDOLLIST)
-#print(Transactielijst)
-#print(hashlijstje)
