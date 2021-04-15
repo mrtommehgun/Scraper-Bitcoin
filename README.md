@@ -6,11 +6,10 @@ Everything will be explained below.
 
 
 ### Pre-requisites
--Python version 3
+Python version 3
 
-In Python3 you will need to have a few modules installed. 
--re: Default with 3.9.4
--time: Default with 3.9.4
--requests 
-
-from bs4 import BeautifulSoup
+#### In Python3 you will need to have a few modules installed. The pip-commands are listed next tot the module.
+	-re: Default with 3.9.4
+ 	-time: Default with 3.9.4
+ 	-requests: "pip install requests"
+    -BeautifulSoup4: "pip install BeautifulSoup"
