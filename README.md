@@ -12,4 +12,4 @@ Python version 3
 	-re: Default with 3.9.4
  	-time: Default with 3.9.4
  	-requests: "pip install requests"
-    -BeautifulSoup4: "pip install BeautifulSoup"
+    	-BeautifulSoup4: "pip install BeautifulSoup"
